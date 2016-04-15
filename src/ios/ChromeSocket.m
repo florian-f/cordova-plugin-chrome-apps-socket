@@ -576,7 +576,7 @@ static NSString* stringFromData(NSData* data) {
     if ([socket->_acceptSocketQueue count] == 0) {
         socket->_acceptCallback = callback;
     } else {
-        ChromeSocketSocket* acceptSocket = [socket->_acceptSocketQueue dequeue];
+        ChromeSocketSocket* acceptSocket = [socket->_acceptSocketQueue cdv_dequeue];
 
         callback(acceptSocket->_socketId);
     }
